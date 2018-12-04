@@ -14,11 +14,11 @@ Sample grocery ordering app built in Ionic framework
 
 ---
 
-![G2H Home](_screenshots/g2h_history.JPG)
+![G2H Home](_screenshots/g2h_order_placed.JPG)
 
 ---
 
-![G2H Home](_screenshots/g2h_order_placed.JPG)
+![G2H Home](_screenshots/g2h_history.JPG)
 
 ---
 
