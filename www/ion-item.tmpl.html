@@ -1,0 +1,12 @@
+<div class="treeitem row" >
+	<div class="col col-66">
+		<span class="symbol">
+		    <i class="icon" ng-if="item.tree.length > 0" ng-class="item.tree.collapsed ? 'ion-arrow-right-b' : 'ion-arrow-down-b'"></i>
+		</span>
+		<b ng-class="item.category" ng-hide="item.showchkbox">{{item.name}}</b> <span ng-show="item.showchkbox">{{item.name}} ₹{{item.price}}</span>
+	</div>
+
+	<div class="col" ng-show="item.showchkbox">
+		<ngcart-addtocart id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" quantity="1" quantity-max="9" data="item">Add</ngcart-addtocart>
+	</div>
+</div>

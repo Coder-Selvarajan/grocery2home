@@ -1,0 +1,65 @@
+/* Empty. Add your own CSS if you like */
+body {
+    cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+
+
+.cart .header .col {
+    background-color:#33cd5f;
+	border-color: #28a54c;
+
+    /*border-color: #28a54c;
+	background-color: #33cd5f;
+	background-image: linear-gradient(0deg, #28a54c, #28a54c 20%, transparent 95%);
+	color: #fff;*/
+}
+
+.cart .col {
+    background-color: whitesmoke;
+    /*border-color: silver;
+	background-color: gainsboro;*/
+}
+
+.history .header .col {
+    background-color:#ffc900;
+    border-color: #e6b500;
+}
+
+.history .col {
+    background-color: whitesmoke;
+}
+
+.item {
+	padding: 5px;
+}
+
+.treeitem .item{
+	padding: 0px;	
+}
+
+.treeitem b{
+	color: #e6b500;
+}
+
+.treeitem .toplevel{
+	color: #28a54c;
+}
+
+.green{
+	color: #28a54c;
+}
+
+
+/*order selection*/
+.item-select {
+  width: 75%; /* Or whatever you'd like the width to be */
+}
+
+.item-select select {
+  left: 0;
+}
+
+.me .input-label{
+	width: 80px;
+}

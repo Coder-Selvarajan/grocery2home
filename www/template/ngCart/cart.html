@@ -1,0 +1,53 @@
+<div class="cart">
+<div class="alert alert-warning padding" role="alert" ng-show="ngCart.getTotalItems() === 0">
+    Your cart is empty
+</div>
+
+<div class="row header">
+  <div class="col col-33 padding">Item</div>
+  <div class="col padding">Qty</div>
+  <div class="col padding text-right">Amt</div>
+  <div class="col col-25 padding text-right">Total</div>
+  <div class="col col-10 padding"></div>
+</div>
+<div class="row" ng-repeat="item in ngCart.getCart().items track by $index">
+  <div class="col col-33">{{ item.getName() }}</div>
+  <div class="col"><span class="glyphicon glyphicon-minus" ng-class="{'disabled':item.getQuantity()==1}" ng-click="item.setQuantity(-1, true)"></span>&nbsp;&nbsp;
+                {{ item.getQuantity() | number }}&nbsp;&nbsp;
+                <span class="glyphicon glyphicon-plus" ng-click="item.setQuantity(1, true)"></span></div>
+  <div class="col text-right">₹{{ item.getPrice() }}</div>
+  <div class="col col-25 text-right">₹{{ item.getTotal() }}</div>
+  <div class="col col-10 text-center"><a ng-click="ngCart.removeItemById(item.getId())" style="cursor: pointer; color: red"><b>X</b></a></div>
+</div>
+<div class="row" ng-show="ngCart.getTax()">
+    <div class="col col-33">Tax ({{ ngCart.getTaxRate() }}%):</div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col col-25 text-right">₹{{ ngCart.getTax() }}</div>
+    <div class="col col-10"></div>
+</div>
+<div class="row" ng-show="ngCart.getShipping()">
+    <div class="col col-33">Shipping:</div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col col-25 text-right">₹{{ ngCart.getShipping() }}</div>
+    <div class="col col-10"></div>
+</div>
+<div class="row">
+    <div class="col col-33"><b>Total:</b></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col col-25 text-right"><b>₹{{ ngCart.totalCost() }}</b></div>
+    <div class="col col-10"></div>
+</div>
+</div>
+
+
+<style>
+    .ngCart.cart span[ng-click] {
+        cursor: pointer;
+    }
+    .ngCart.cart .glyphicon.disabled {
+        color:#aaa;
+    }
+</style>

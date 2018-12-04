@@ -1,0 +1,28 @@
+<ion-view view-title="My Info" cache-view="false">
+    <ion-content class="me padding">
+
+		<div class="list">
+		  <label class="item item-input">
+		  	<span class="input-label"><b>Name</b></span>
+		    <input type="text" ng-model="name">
+		  </label>
+		  <label class="item item-input">
+		  	<span class="input-label"><b>Email</b></span>
+		    <input type="text" ng-model="email">
+		  </label>
+		  <label class="item item-input">
+		  	<span class="input-label"><b>Phone</b></span>
+		    <input type="text" ng-model="phone">
+		  </label>
+		  <label class="item item-input">
+  			<span class="input-label"><b>Address</b></span>
+  			<textarea rows="3" ng-model="address"></textarea>
+		  </label>
+		  <br/>
+		  <button class="button button-balanced" ng-click="update(name,email,phone,address)"> Update</button>
+		  <br/><br/>
+		  <span class="green">{{message}}</span>
+		</div>
+      
+    </ion-content>
+</ion-view>

@@ -1,0 +1,9 @@
+<span ng-show="quantityMax">
+    <select name="quantity" id="quantity" ng-model="q"
+            ng-options=" v for v in qtyOpt" style="border: solid thin gainsboro; background-color: whitesmoke; width:45px;"></select>
+</span>
+<a class="btn btn-sm btn-primary"
+   ng-hide="inCart()" 
+   ng-click="ngCart.addItem(id, name, price, q, data)"
+   ng-transclude></a>
+<a ng-show="inCart()" ng-click="ngCart.removeItemById(id)" style="cursor: pointer; color: red">Rem</a>

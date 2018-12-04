@@ -1,0 +1,51 @@
+<ion-view view-title="Shopping Cart" cache-view="false">
+  <ion-content>
+
+    <div class="row" ng-hide="checkout">
+      <div class="col col-67 text-left">
+          <ngcart-summary></ngcart-summary>
+      </div>
+      <div class="col text-right" ng-hide="cardempty">
+          <button ng-click="add(order)" class="button button-balanced">Checkout</button>
+      </div>
+    </div>
+
+    <div style="margin: 5px;" ng-hide="checkout">
+      <ngcart-cart></ngcart-cart>
+    </div>
+
+    <div ng-hide="cardempty">
+      <!-- <ngcart-checkout service="log" ng-click="add(order)">Checkout</ngcart-checkout> -->
+    
+      <div class="card">
+        <div class="item item-divider">
+          Payment Mode:
+        </div>
+        <div class="item item-text-wrap">
+          <ion-radio ng-model="choice">Cash On Delivery</ion-radio>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="item item-divider">
+          Name & Address:
+        </div>
+        <div class="item item-text-wrap">
+          {{ $storage.name }} - {{ $storage.phone }} 
+          <br/>
+          {{ $storage.address }}
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="card" ng-show="checkout">
+      <div class="item item-text-wrap">
+        <h3 class="green">
+          Thank you for your order. <br/> Your order will be delivered in 2 hours.
+        </h3>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="Order History" cache-view="false">
+	<ion-content class="padding history">
+		<ion-refresher on-refresh="doRefresh()"></ion-refresher>
+		
+		<div style="margin: 0px;">
+			<div class="row header" style="padding: 0px;">
+		  		<div class="col col-50 padding">Order Date</div>
+			  	<div class="col padding text-right">Qty</div>
+			  	<div class="col col-25 padding text-right">Amount</div>
+			  	<div class="col col-10 padding text-center"></div>
+			</div>
+			<div class="row" ng-repeat="order in orders" style="padding: 0px;">
+				<div class="col col-50 padding">{{ order.date | date: 'MMMdd - hh:mma' }}</div>
+				<div class="col padding text-center">{{ order.noofitems }}</div>
+				<div class="col col-25 padding text-right">₹{{ order.totalcost }}</div>
+				<div class="col col-10 padding text-center">
+					<a ng-click="remove(order)" style="cursor: pointer; color: red"><b>X</b></a>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>
